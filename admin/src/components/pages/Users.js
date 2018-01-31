@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './users.css';
+import './Users.css';
 
 //components
-import UsersListItem from './UsersListItem';
+import UsersListItem from '../organisms/UsersListItem';
 
 const UserListData = [
     {
@@ -13,7 +13,8 @@ const UserListData = [
         position: "CEO",
         activity: "Online now!",
         mail: "johndoe@design.com",
-        phone: "(000) 111 222 333"
+        phone: "(000) 111 222 333",
+        isOnline: true
     },
     {
         id: '2',
@@ -22,7 +23,8 @@ const UserListData = [
         position: "UX Designer",
         activity: "Online now!",
         mail: "ninajones@design.com",
-        phone: "(000) 111 222 333"
+        phone: "(000) 111 222 333",
+        isOnline: true
     },
     {
         id: '3',
@@ -31,7 +33,8 @@ const UserListData = [
         position: "Web Designer",
         activity: "Online now!",
         mail: "alexsmith@design.com",
-        phone: "(000) 111 222 333"
+        phone: "(000) 111 222 333",
+        isOnline: true
     },
     {
         id: '4',
@@ -40,7 +43,8 @@ const UserListData = [
         position: "Account Manager",
         activity: "20 minutes ago",
         mail: "annclooney@design.com",
-        phone: "(000) 111 222 333"
+        phone: "(000) 111 222 333",
+        isOnline: false
     },
     {
         id: '5',
@@ -49,7 +53,8 @@ const UserListData = [
         position: "Project Manager",
         activity: "40 minutes ago",
         mail: "patricksmith@design.com",
-        phone: "(000) 111 222 333"
+        phone: "(000) 111 222 333",
+        isOnline: false
     },
     {
         id: '6',
@@ -58,7 +63,8 @@ const UserListData = [
         position: "Product Designer",
         activity: "1 hour ago",
         mail: "nickyhunt@design.com",
-        phone: "(000) 111 222 333"
+        phone: "(000) 111 222 333",
+        isOnline: false
     },
     {
         id: '7',
@@ -67,7 +73,8 @@ const UserListData = [
         position: "Graphic Designer",
         activity: "2 days ago",
         mail: "janedoe@design.com",
-        phone: "(000) 111 222 333"
+        phone: "(000) 111 222 333",
+        isOnline: false
     }
 ];
 

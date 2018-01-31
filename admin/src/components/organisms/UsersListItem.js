@@ -1,20 +1,20 @@
 import React from 'react';
 
-import './userlistitem.css';
+import './UserListItem.css';
 
 class UsersListItem extends React.Component {
     constructor(props) {
         super(props);
     }
 
-    render () {
+    render() {
         return (
-            <li key={ this.props.data.id }>
+            <li key={this.props.data.id}>
                 <ul className="UsersListInfo">
                     <li className="UserName">
                         <div className="ImgWrapper ">
-                            <p className="OnlineStatus"></p>
-                            <img src={ this.props.data.src } alt={ this.props.data.name }/>
+                            <p className={ this.props.data.isOnline ? "OnlineStatus" : null}></p>
+                            <img src={this.props.data.src} alt={this.props.data.name}/>
                         </div>
                         <div className="UserInfo">
                             <p className="Name">{this.props.data.name}</p>
@@ -22,7 +22,7 @@ class UsersListItem extends React.Component {
                         </div>
                     </li>
                     <li className="ActivityInfo">
-                        <p className="Online">
+                        <p className={this.props.data.isOnline ? "Online" : "Offline"}>
                             {this.props.data.activity}
                         </p>
                     </li>
