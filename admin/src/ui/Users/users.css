@@ -1,0 +1,7 @@
+.Users {
+    padding: 50px 45px 0 45px;
+    background: #f6f6fa;
+    max-width: 100%;
+    width: calc(100vw - 440px);
+    height: calc(100vh - 171px);
+}
