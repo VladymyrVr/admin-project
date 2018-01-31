@@ -1,9 +1,10 @@
 .Users {
-    padding: 50px 45px 0 45px;
+    padding: 50px 45px 100px 45px;
     background: #f6f6fa;
     max-width: 100%;
-    width: calc(100vw - 410px);
+    width: calc(100vw - 425px);
     height: auto;
+    margin-left: 320px;
 }
 
 .UserStatus {
@@ -41,8 +42,6 @@
 .UsersGeneral span {
     color: #8492af;
 }
-
-
 .UsersList {
     margin-bottom: 50px;
 }

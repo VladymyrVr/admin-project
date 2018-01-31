@@ -4,6 +4,7 @@ import './Users.css';
 
 //components
 import UsersListItem from '../organisms/UsersListItem';
+import NavPages from "../molecules/NavPages";
 
 const UserListData = [
     {
@@ -96,12 +97,12 @@ class Users extends React.Component {
                     {
                         UserListData.map(item => {
                             return (
-                                <UsersListItem data={item}/>
+                                <UsersListItem data={item} key={item.id}/>
                             )
                         })
                     }
                 </ul>
-
+                <NavPages/>
 
             </section>
         )
