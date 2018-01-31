@@ -6,11 +6,28 @@ import Users from "../Users/Users";
 class Menu extends React.Component {
     render() {
         return (
-                <div className="FlexWrapper">
-                    <div className="SideMenu">
-                        <div className="logo">
+            <div>
+                <header className="TopMenu">
+                    <div className="LeftPanel">
+                        <div className="Logo">
                             <img src="img/logo.png" alt="Logo"/>
                         </div>
+                        <button className="BurgerButton"></button>
+                        <button className="SearchButton"></button>
+                    </div>
+                    <div className="RightPanel">
+                        <button className="AddProject">Add project</button>
+                        <a href="#" className="Messages"></a>
+                        <a href="#" className="Notification"></a>
+                        <div className="Person">
+                            <div className="AvatarWrapper">
+                                <img src="img/Menu/person-avatar.png" alt="Avatar"/>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div className="FlexWrapper">
+                    <div className="SideMenu">
                         <nav className="SideNav">
                             <ul className="NavList">
                                 <li><a className="Home" href="">Home</a></li>
@@ -22,24 +39,9 @@ class Menu extends React.Component {
                             </ul>
                         </nav>
                     </div>
-                    <div className="TopMenu">
-                        <div className="LeftPanel">
-                            <button className="BurgerButton"></button>
-                            <button className="SearchButton"></button>
-                        </div>
-                        <div className="RightPanel">
-                            <button className="AddProject">Add project</button>
-                            <a href="#" className="Messages"></a>
-                            <a href="#" className="Notification"></a>
-                            <div className="Person">
-                                <div className="AvatarWrapper">
-                                    <img src="img/Menu/person-avatar.png" alt="Avatar"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <Users/>
                 </div>
+            </div>
         )
     }
 }

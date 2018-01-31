@@ -1,0 +1,106 @@
+
+.UsersListInfo li {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid rgba(132, 146, 175, 0.3);
+}
+
+.UsersListInfo li:last-child {
+    border: none;
+}
+
+.UsersListInfo .ImgWrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 35px;
+    position: relative;
+}
+
+.OnlineStatus:before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #00bf1b;
+    border: 2px solid #fff;
+    top: 10%;
+    right: 0;
+}
+
+.UserName .Name{
+    color: #0e1a35;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 16px;
+    margin-bottom: 10px;
+}
+
+.UserName .Position {
+    color: #8492af;
+    font-size: 20px;
+    line-height: 16px;
+}
+
+.ActivityInfo {
+    max-width: 300px;
+    width: 100%;
+    padding-left: 35px;
+}
+
+.ActivityInfo .Online {
+    color: #00bf1b;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.ActivityInfo .Online::before {
+    content: "\f017";
+    font-family: 'FontAwesome', sans-serif;
+    margin-right: 5px;
+}
+
+.MailInfo {
+    max-width: 300px;
+    width: 100%;
+    padding-left: 40px;
+}
+
+.MailInfo p {
+    color: #0e1a35;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.PhoneInfo {
+    max-width: 300px;
+    width: 100%;
+    padding-left: 40px;
+}
+
+.PhoneInfo p {
+    color: #0e1a35;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.DetailInfo {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.DetailInfo .DetailButton {
+    width: 7px;
+    height: 33px;
+    border: none;
+    background: url("img/options.png") no-repeat;
+
+}
+

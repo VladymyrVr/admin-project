@@ -5,14 +5,21 @@
 
 .SideMenu {
     background: #1c1839;
-    height: 100vh;
+    height: auto;
     max-width: 320px;
     width: 100%;
 }
 
-.SideMenu .logo {
-    margin: 0 0 35px 40px;
-    padding-top: 30px;
+.Logo {
+    background: #1c1839;
+    width: 320px;
+    height: inherit;
+    margin-right: 50px;
+    padding: 33px 0;
+}
+
+.Logo img {
+    margin-left: 35px;
 }
 
 .NavList {
@@ -121,11 +128,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
     max-width: 100%;
-    width: calc(100vw - 425px);
+    width: 100%;
     height: 120px;
-    padding: 0 50px 0 40px;
     border-bottom: 1px solid rgba(132, 146, 175, 0.3);
 }
 
@@ -168,6 +173,7 @@
 .RightPanel {
     display: flex;
     align-items: center;
+    margin-right: 50px;
 }
 
 .RightPanel .AddProject {
