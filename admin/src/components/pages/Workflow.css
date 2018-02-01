@@ -3,6 +3,42 @@
     background: #f6f6fa;
     max-width: 100%;
     width: calc(100vw - 425px);
-    height: inherit;
+    min-height: calc(100vh + 103px);
     margin-left: 320px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.Category, .CategoryCompleted {
+    color: #0e1a35;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 14px;
+    max-width: 460px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.Category::after {
+    position: absolute;
+    content: "";
+    width: 17px;
+    height: 27px;
+    background: url("../../assets/img/arrow-left.png") no-repeat;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.Category span, .CategoryCompleted span {
+    color: #8492af;
+    font-size: 36px;
+    font-weight: 500;
+
+}
+
+.ToDoCategory, .ToDoInProgress, .ToDoCompleted {
+    margin-bottom: 40px;
 }

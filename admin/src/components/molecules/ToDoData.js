@@ -6,17 +6,24 @@ import './ToDoData.css';
 import TaskName from "../atoms/TaskName";
 
 class ToDoData extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render () {
+
+        let TimeStatus;
+        if (this.props.data.delay) {
+            TimeStatus = ("ToDoTimeDelay")
+        } else if (this.props.data.done) {
+            TimeStatus = ("ToDoComplete")
+        } else {
+            TimeStatus = ("ToDoTime")
+        }
+
         return (
             <div className="ToDoData">
                 <TaskName data={this.props.data} />
                 <div className="DataContent">
                     <p className="ToDoTitle">{this.props.data.title}</p>
-                    <p className="ToDoTime">{this.props.data.title}</p>
+                    <p className={TimeStatus}>{this.props.data.timeStatus}</p>
                 </div>
             </div>
         )

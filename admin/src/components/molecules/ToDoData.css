@@ -15,8 +15,34 @@
     line-height: 16px;
 }
 
+.ToDoTimeDelay {
+    color: #f83c7b;
+    font-size: 14px;
+    line-height: 16px;
+}
+
 .ToDoTime::before {
     content: "\f017";
+    display: inline-block;
+    font-family: 'FontAwesome', sans-serif;
+    margin-right: 5px;
+}
+
+.ToDoTimeDelay::before {
+    content: "\f017";
+    display: inline-block;
+    font-family: 'FontAwesome', sans-serif;
+    margin-right: 5px;
+}
+
+.ToDoComplete {
+    color: #00bf1b;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.ToDoComplete::before {
+    content: "\f058";
     display: inline-block;
     font-family: 'FontAwesome', sans-serif;
     margin-right: 5px;

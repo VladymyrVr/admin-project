@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 //components
 import LeftBar from './components/organisms/LeftBar';
 import TopBar from "./components/organisms/TopBar";
-import Users from "./components/pages/Users";
 import Workflow from "./components/pages/Workflow";
 
 
