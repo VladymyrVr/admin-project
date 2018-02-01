@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 
 .UserStatus select {
@@ -42,6 +42,8 @@
 .UsersGeneral span {
     color: #8492af;
 }
+
+
 .UsersList {
     margin-bottom: 50px;
 }

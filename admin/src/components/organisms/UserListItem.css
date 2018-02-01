@@ -31,8 +31,7 @@
     right: 0;
 }
 
-
-.UsersList  > li {
+.UsersList > li {
     max-width: 1500px;
     width: 100%;
     background: #fff;
@@ -55,8 +54,7 @@
     align-items: center;
 }
 
-
-.UserName .Name{
+.UserName .Name {
     color: #0e1a35;
     font-size: 20px;
     font-weight: 700;
@@ -132,14 +130,46 @@
     display: flex;
     justify-content: center;
     max-width: 12%;
-    width:100%;
+    width: 100%;
 }
 
-.DetailInfo .DetailButton {
-    width: 7px;
-    height: 33px;
-    border: none;
-    background: url("../../assets/img/options.png") no-repeat;
+.TitleName, .TitleActivity, .TitleMail, .TitlePhone {
+    position: relative;
+}
 
+.TitleName::before {
+    position: absolute;
+    content: "Name";
+    color: #8492af;
+    font-size: 20px;
+    line-height: 14px;
+    top: -25%;
+}
+
+.TitleActivity::before {
+    position: absolute;
+    content: "Last activity";
+    color: #8492af;
+    font-size: 20px;
+    line-height: 14px;
+    top: -25%;
+}
+
+.TitleMail::before {
+    position: absolute;
+    content: "Mail";
+    color: #8492af;
+    font-size: 20px;
+    line-height: 14px;
+    top: -25%;
+}
+
+.TitlePhone::before {
+    position: absolute;
+    content: "Phone";
+    color: #8492af;
+    font-size: 20px;
+    line-height: 14px;
+    top: -25%;
 }
 

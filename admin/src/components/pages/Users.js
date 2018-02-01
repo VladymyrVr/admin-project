@@ -15,7 +15,8 @@ const UserListData = [
         activity: "Online now!",
         mail: "johndoe@design.com",
         phone: "(000) 111 222 333",
-        isOnline: true
+        isOnline: true,
+        title: true
     },
     {
         id: '2',

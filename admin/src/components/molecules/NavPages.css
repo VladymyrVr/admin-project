@@ -12,6 +12,7 @@
     background: url("../../assets/img/rectangle-right.png");
     margin-left: 15px;
     margin-top: 7px;
+    cursor: pointer;
 }
 
 .PagesList li {

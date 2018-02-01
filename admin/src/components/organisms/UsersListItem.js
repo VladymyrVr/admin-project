@@ -2,6 +2,9 @@ import React from 'react';
 
 import './UserListItem.css';
 
+//components
+import DetailButton from '../atoms/DetailButton';
+
 class UsersListItem extends React.Component {
 
 
@@ -9,7 +12,7 @@ class UsersListItem extends React.Component {
         return (
             <li key={this.props.data.id}>
                 <ul className="UsersListInfo">
-                    <li className="UserName">
+                    <li className={this.props.data.title ? "TitleName UserName" : "UserName"}>
                         <div className="ImgWrapper ">
                             <p className={ this.props.data.isOnline ? "OnlineStatus" : null}></p>
                             <img src={this.props.data.src} alt={this.props.data.name}/>
@@ -19,19 +22,19 @@ class UsersListItem extends React.Component {
                             <p className="Position">{this.props.data.position}</p>
                         </div>
                     </li>
-                    <li className="ActivityInfo">
+                    <li className={this.props.data.title ? "TitleActivity ActivityInfo" : "ActivityInfo"}>
                         <p className={this.props.data.isOnline ? "Online" : "Offline"}>
                             {this.props.data.activity}
                         </p>
                     </li>
-                    <li className="MailInfo">
+                    <li className={this.props.data.title ? "TitleMail MailInfo" : "MailInfo"}>
                         <p>{this.props.data.mail}</p>
                     </li>
-                    <li className="PhoneInfo">
+                    <li className={this.props.data.title ? "TitlePhone PhoneInfo" : "PhoneInfo"}>
                         <p>{this.props.data.phone}</p>
                     </li>
                     <li className="DetailInfo">
-                        <button className="DetailButton"></button>
+                        <DetailButton/>
                     </li>
                 </ul>
             </li>
