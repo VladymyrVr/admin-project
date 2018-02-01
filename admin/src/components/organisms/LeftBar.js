@@ -1,6 +1,8 @@
 import React from 'react';
 
-import './LeftBar.css'
+import { Link} from 'react-router-dom';
+
+import './LeftBar.css';
 
 
 class LeftBar extends React.Component {
@@ -9,12 +11,12 @@ class LeftBar extends React.Component {
             <div className="SideMenu">
                 <nav className="SideNav">
                     <ul className="NavList">
-                        <li><a className="Home" href="">Home</a></li>
-                        <li><a className="Workflow" href="">Workflow</a></li>
+                        <li><Link className="Home" exact to="/">Home</Link></li>
+                        <li><Link className="Workflow" to="/workflow">Workflow</Link></li>
                         <li><a className="Statistics" href="">Statistics</a></li>
                         <li><a className="Calendar" href="">Calendar</a></li>
                         <li><a className="User" href="">Users</a></li>
-                        <li><a className="Settings" href="">Settings</a></li>
+                        <li><a className="Settings" href="">Settings</a></li>*/
                     </ul>
                 </nav>
             </div>

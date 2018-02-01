@@ -9,13 +9,11 @@
     background: #fff;
     margin-bottom: 15px;
     border: 1px solid rgba(132, 146, 175, 0.3);
-    transition: all .4s;
+    transition: all .6s;
 }
 
 .ToDoListItem:hover {
     transform: scale(1.05);
-}
-
-.ToDoListItem:hover .TaskName {
-    transform: rotate(360deg);
+    box-shadow: 0 10px 15px #777;
+    cursor: pointer;
 }

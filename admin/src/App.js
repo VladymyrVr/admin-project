@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 //components
 import LeftBar from './components/organisms/LeftBar';
 import TopBar from "./components/organisms/TopBar";
-import Workflow from "./components/pages/Workflow";
+import Main from "./Main";
+
 
 
 class App extends Component {
@@ -12,7 +13,7 @@ class App extends Component {
       <div className="App">
         <TopBar/>
         <LeftBar/>
-        <Workflow/>
+        <Main/>
       </div>
     );
   }

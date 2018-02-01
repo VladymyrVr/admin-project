@@ -88,20 +88,43 @@
 }
 
 .RightPanel .Messages {
+    font-family: 'FontAwesome' , sans-serif;
+    position: relative;
     display: inline-block;
-    width: 33px;
-    height: 23px;
-    background: url(../../assets/img/messages-icon.png) no-repeat;
+    font-size: 28px;
+    text-decoration: none;
+    color: #0e1a35;
+    transition: all .6s;
     margin-right: 30px;
 }
 
+.RightPanel .Messages:hover {
+    transform: scale(1.2);
+    color: #5584ff;
+}
+
 .RightPanel .Notification {
+    font-family: 'FontAwesome' , sans-serif;
     position: relative;
     display: inline-block;
-    width: 24px;
-    height: 28px;
-    background: url(../../assets/img/notifications-icon.png) no-repeat;
+    font-size: 28px;
     margin-right: 45px;
+    text-decoration: none;
+    color: #0e1a35;
+    transition: all .6s;
+}
+
+
+@keyframes trambling-animation {
+    0%, 50%, 100% {
+        transform: rotate(0deg);
+    }
+    10%, 30% {
+        transform: rotate(-10deg);
+    }
+    20%, 40% {
+        transform: rotate(10deg);
+    }
 }
 
 .RightPanel .Notification::after {
@@ -117,7 +140,11 @@
     color: #fff;
     font: 500 12px/16px 'Roboto', sans-serif;
     top: -20%;
-    right: -40%;
+    right: -30%;
+}
+.Notification:hover {
+    color: #f83c7b;
+    animation: 1.5s ease-in-out 0s normal none infinite running trambling-animation;
 }
 
 .AvatarWrapper {
