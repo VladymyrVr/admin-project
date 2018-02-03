@@ -1,0 +1,56 @@
+.Messages {
+    max-width: calc(100% - 72px);
+    width: 100%;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    padding: 0 35px;
+    border: 1px solid rgba(132, 146, 175, 0.3);
+}
+
+.Read {
+    background: #fff;
+}
+
+.Unread {
+    background: #f4f4f8;
+}
+
+.AvatarWrapper {
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 25px;
+}
+
+.AvatarWrapper img {
+    width: 100%;
+    height: 100%;
+}
+
+.MessagesPersonName {
+    color: #0e1a35;
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 7px;
+}
+
+.MessagesTimeStatus {
+    color: #8492af;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.InfoAboutPerson {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.MessagesContent {
+    color: #555555;
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 10px;
+}

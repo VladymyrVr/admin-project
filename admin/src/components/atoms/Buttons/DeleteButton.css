@@ -1,0 +1,23 @@
+.DeleteButton {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(132, 146, 175, 0.3);
+    background: #fff;
+    position: relative;
+}
+
+.DeleteButton::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 17px;
+    height: 23px;
+    background: url("../../../assets/img/delete-icon.png") no-repeat;
+}
+
+.DeleteButton:hover {
+    border: 1px solid rgba(132, 146, 175, 0.5);
+}

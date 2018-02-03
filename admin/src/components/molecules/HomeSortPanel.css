@@ -1,21 +1,19 @@
-.Users {
-    padding: 50px 45px 100px 43px;
-    background: #f6f6fa;
+.HomeSortPanel {
     max-width: 100%;
-    width: calc(100vw - 425px);
-    min-height: calc(100vh + 103px);
-    margin-left: 320px;
-}
-
-.UserStatus {
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-bottom: 80px;
+    align-items: center;
+    margin-bottom: 50px;
 }
 
-.UserStatus select {
-    position: relative;
+.HomeSortPanel .CategoryPanel {
+    color: #8492af;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.HomeSortPanel select {
     width: 200px;
     height: 50px;
     border-radius: 24px;
@@ -30,20 +28,4 @@
     font-size: 14px;
     font-weight: 700;
     color: #0e1a35;
-}
-
-.UsersGeneral {
-    color: #0e1a35;
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 16px;
-}
-
-.UsersGeneral span {
-    color: #8492af;
-}
-
-
-.UsersList {
-    margin-bottom: 50px;
 }

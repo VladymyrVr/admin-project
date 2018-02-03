@@ -18,7 +18,7 @@
     width: 320px;
     height: inherit;
     margin-right: 50px;
-    padding: 33px 0;
+    padding: 34px 0;
 }
 
 .Logo img {
@@ -87,7 +87,7 @@
     left: 10%;
 }
 
-.RightPanel .Messages {
+.RightPanel .MessagesLink {
     font-family: 'FontAwesome' , sans-serif;
     position: relative;
     display: inline-block;
@@ -98,7 +98,7 @@
     margin-right: 30px;
 }
 
-.RightPanel .Messages:hover {
+.RightPanel .MessagesLink:hover {
     transform: scale(1.2);
     color: #5584ff;
 }
@@ -144,7 +144,7 @@
 }
 .Notification:hover {
     color: #f83c7b;
-    animation: 1.5s ease-in-out 0s normal none infinite running trambling-animation;
+    animation: 1.5s ease-in-out 0s normal none  running trambling-animation;
 }
 
 .AvatarWrapper {

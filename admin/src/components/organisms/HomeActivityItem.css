@@ -1,0 +1,19 @@
+.ActivityList {
+    border: 1px solid rgba(132, 146, 175, 0.3);
+    background: #fff;
+    position: relative;
+    z-index: 0;
+}
+
+.ActivityList::before {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 300px;
+    background-color: #8492af;
+    top: 18%;
+    left: 12.5%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+

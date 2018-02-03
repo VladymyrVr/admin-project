@@ -32,7 +32,7 @@
 }
 
 .UsersList > li {
-    max-width: 1500px;
+    max-width: 100%;
     width: 100%;
     background: #fff;
     border: 1px solid rgba(132, 146, 175, 0.3);

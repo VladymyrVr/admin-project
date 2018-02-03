@@ -1,0 +1,7 @@
+.MessagesGroupButton {
+    display: flex;
+}
+
+.MessagesGroupButton .BackButton {
+    margin-right: 10px;
+}

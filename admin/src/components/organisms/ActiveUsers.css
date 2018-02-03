@@ -1,0 +1,44 @@
+.ActiveUsers {
+    max-width: 830px;
+    width: 100%;
+    height: 402px;
+    background: #fff;
+    padding: 30px;
+    border: 1px solid rgba(132, 146, 175, 0.3);
+}
+
+.ActiveUsers:hover .ActiveUsersPanel>h3 {
+    color: #0b0a10;
+}
+
+.ActiveUsersPanel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.ActiveUsersPanel h3 {
+    color: #8492af;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 14px;
+}
+
+.GraphWrapper img {
+    width: 100%;
+}
+
+.GraphWrapper {
+    position: relative;
+}
+
+.GraphWrapper::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 220px;
+    background: url("../../assets/img/graph.png") no-repeat;
+    top: 10%;
+    left: 0;
+}

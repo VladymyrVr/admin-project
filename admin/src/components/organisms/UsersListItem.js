@@ -3,7 +3,7 @@ import React from 'react';
 import './UserListItem.css';
 
 //components
-import DetailButton from '../atoms/DetailButton';
+import DetailButton from '../atoms/Buttons/DetailButton';
 
 class UsersListItem extends React.Component {
 

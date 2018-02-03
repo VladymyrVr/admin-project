@@ -1,0 +1,42 @@
+.ProgressRing {
+    width: 189px;
+    height: 189px;
+    position: relative;
+    margin-right: 45px;
+}
+
+.StatusPercent {
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.SaleCategory {
+    display: flex;
+    align-items: center ;
+}
+
+.SaleCategory:hover {
+    cursor: pointer;
+}
+
+.SaleCategory:hover .SaleInfoCategory>p {
+    color: #0b0a10;
+}
+
+.SalePrice {
+    color: #8492af;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.SaleCategoryName {
+    color: #8492af;
+    font-size: 20px;
+    font-weight: 300;
+}

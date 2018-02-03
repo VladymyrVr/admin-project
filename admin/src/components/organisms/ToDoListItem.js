@@ -4,7 +4,7 @@ import './ToDoListItem.css';
 
 //components
 import ToDoData from "../molecules/ToDoData";
-import DetailButton from '../atoms/DetailButton';
+import DetailButton from '../atoms/Buttons/DetailButton';
 
 class ToDoListItem extends React.Component {
     render () {

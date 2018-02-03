@@ -1,0 +1,48 @@
+.Activity {
+    padding: 0 35px;
+    display: flex;
+    align-items: center;
+    height: 110px;
+}
+
+.ActivityWrapper {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.ActivityPersonName, .ActivityNameTask {
+    color: #0e1a35;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.ActivityAction {
+    color: #8492af;
+    font-weight: 400;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.ActivityTime {
+    color: #8492af;
+    font-size: 14px;
+}
+
+.ActivityTime::before {
+    content: "\f017";
+    display: inline-block;
+    font-family: 'FontAwesome', sans-serif;
+    margin-right: 5px;
+}
+
+.Activity .AvatarWrapper {
+    width: 47px;
+    height: 47px;
+    overflow: hidden;
+    z-index: 5;
+}
+
+
+
+

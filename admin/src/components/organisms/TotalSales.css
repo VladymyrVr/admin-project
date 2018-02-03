@@ -1,0 +1,33 @@
+.TotalSales {
+    max-width: 100%;
+    width: 100%;
+    background: #fff;
+    border: 1px solid rgba(132, 146, 175, 0.3);
+}
+
+.PaddingWrapper {
+    padding: 35px 35px 100px 35px;
+}
+
+.TotalSales:hover .ActiveTotalPanel>h3 {
+    color: #0b0a10;
+}
+
+.ActiveTotalPanel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.ActiveTotalPanel h3 {
+    color: #8492af;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 14px;
+}
+
+.TotalSalesList {
+    display: flex;
+    justify-content: space-around;
+}
