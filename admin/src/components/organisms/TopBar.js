@@ -7,19 +7,19 @@ class TopBar extends React.Component {
     render () {
         return (
             <header className="TopMenu">
+                <div className="Logo">
+                    <img src="img/logo.png" alt="Logo"/>
+                </div>
                 <div className="LeftPanel">
-                    <div className="Logo">
-                        <img src="img/logo.png" alt="Logo"/>
-                    </div>
                     <button className="BurgerButton"></button>
                     <button className="SearchButton"></button>
                 </div>
                 <div className="RightPanel">
                     <button className="AddProject">Add project</button>
-                    <a href="#" className="MessagesLink">
+                    <a className="MessagesLink">
                         <i className="fas fa-envelope"></i>
                     </a>
-                    <a href="#" className="Notification">
+                    <a className="Notification">
                         <i className="fas fa-bell"></i>
                     </a>
                     <div className="Person">

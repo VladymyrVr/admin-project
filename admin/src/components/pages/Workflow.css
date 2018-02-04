@@ -1,5 +1,5 @@
 .WorkflowPage {
-    padding: 50px 45px 100px 43px;
+    padding: 50px 45px 100px 45px;
     background: #f6f6fa;
     max-width: 100%;
     width: calc(100vw - 425px);
@@ -41,4 +41,42 @@
 
 .ToDoCategory, .ToDoInProgress, .ToDoCompleted {
     margin-bottom: 40px;
+}
+
+/*
+    Responsive
+ */
+
+@media screen and (max-width: 1440px) {
+    .ToDoCategory {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .ToDoCategory p {
+        max-width: 100%;
+    }
+
+    .WorkflowPage .ToDoListItem {
+        width: calc(100% - 70px);
+    }
+
+    .ToDoInProgress {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .ToDoInProgress p {
+        max-width: 100%;
+    }
+
+    .ToDoCompleted {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .ToDoInProgress p {
+        max-width: 100%;
+    }
+
 }

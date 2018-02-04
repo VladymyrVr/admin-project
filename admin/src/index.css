@@ -23,6 +23,12 @@ time, mark, audio, video {
 
 html {
   line-height: 1;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  position: relative;
 }
 
 ol, ul {

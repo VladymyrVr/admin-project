@@ -47,7 +47,7 @@ class Statistics extends React.Component {
                         {
                             StatsData.map(item => {
                                 return (
-                                    <StatsCard data={item} id={item._id}/>
+                                    <StatsCard data={item} key={item._id}/>
                                 )
                             })
                         }

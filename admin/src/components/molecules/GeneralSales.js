@@ -9,7 +9,7 @@ class GeneralSales extends React.Component {
     render() {
         return(
             <div className="GeneralSales">
-                <img src={SalesImg} alt="General Sales Image"/>
+                <img src={SalesImg} alt="General Sales"/>
                 <ul>
                     <li className="Websites">Websites</li>
                     <li className="LogoGeneral">Logo</li>

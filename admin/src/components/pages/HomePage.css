@@ -1,5 +1,5 @@
 .HomePage {
-    padding: 45px 45px 30px 43px;
+    padding: 45px 45px 30px 45px;
     background: #f6f6fa;
     max-width: 100%;
     width: calc(100vw - 425px);
@@ -30,4 +30,32 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+/*
+    Responsive
+ */
+
+@media screen and (max-width: 1440px) {
+
+    .HomePage .FlexWrapper {
+        justify-content: center;
+    }
+
+    .HomePage .InfoSalesCard {
+        margin-bottom: 20px;
+    }
+
+    .HomePage .HomeActiveLists {
+        justify-content: space-around;
+    }
+
+    .HomePage .HomeTasksItem {
+        margin-bottom: 20px;
+    }
+
+    .HomePage .HomeMessagesItem {
+        margin-bottom: 20px;
+    }
+
 }

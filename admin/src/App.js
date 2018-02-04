@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './responsive.css'
+
 //components
 import LeftBar from './components/organisms/LeftBar';
 import TopBar from "./components/organisms/TopBar";

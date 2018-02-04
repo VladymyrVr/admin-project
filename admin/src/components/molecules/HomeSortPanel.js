@@ -3,9 +3,6 @@ import React from 'react';
 import './HomeSortPanel.css';
 
 class HomeSortPanel extends React.Component {
-    constructor(props) {
-        super(props)
-    }
     render() {
         return(
             <div className="HomeSortPanel">
