@@ -1,0 +1,52 @@
+.AuthorizationPanel {
+    height: 145px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1c1839;
+}
+
+.LogoMerc {
+    margin-left: 45px;
+}
+
+.AuthorizationPanel a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    position: relative;
+}
+
+
+.AuthorizationPanel .LoginLink {
+    padding: 0 50px;
+}
+
+.AuthorizationPanel .RegisterLink {
+    padding: 0 50px;
+}
+
+.LoginLink::before {
+    content: "";
+    position: absolute;
+    height: 10px;
+    background-color: #5584ff;
+    left: 0;
+    right: 0;
+    top: 77px;
+}
+
+/*
+    Responsive
+ */
+
+@media screen and (max-width: 1440px) {
+    .AuthorizationPanel {
+        height: 100px;
+    }
+
+    .LoginLink::before {
+        top: 54px;
+    }
+}

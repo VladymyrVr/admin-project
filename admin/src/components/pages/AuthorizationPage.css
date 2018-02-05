@@ -1,0 +1,27 @@
+.AuthorizationPage {
+    width: 100vw;
+    height: 100vh;
+    background: url("../../assets/img/auth-background.png") no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 139px rgba(147, 161, 185, 0.59);
+}
+
+.Authorization {
+    max-width: 1200px;
+    width: 100%;
+    background-color: #f6f7fa;
+    height: auto;
+}
+
+/*
+    Responsive
+ */
+
+@media screen and (max-width: 1440px) {
+    .Authorization {
+        max-width: 800px;
+    }
+}

@@ -1,0 +1,30 @@
+.UsersField {
+    width: 500px;
+    padding: 15px 0 15px 50px;
+    margin: 25px auto 0 auto;
+    border: none;
+    background: transparent url("../../../assets/img/users-field.png") no-repeat;
+    border-bottom: 1px solid #8492af;
+    background-position: left 30%;
+    transition: all .4s;
+    color: #8492af;
+    font-size: 24px;
+}
+
+.UsersField:focus {
+    border-bottom: 1px solid #7a4fff;
+}
+
+
+
+.UsersField::-webkit-input-placeholder {
+    color: #8492af;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 56px;
+}
+
+.UsersField:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
