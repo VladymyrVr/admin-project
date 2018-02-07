@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
-import './responsive.css'
+import './responsive.css';
+import 'font-awesome/css/font-awesome.min.css';
+
+
 
 //components
 import LeftBar from './components/organisms/LeftBar';
