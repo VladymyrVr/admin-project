@@ -42,6 +42,7 @@
     font-size: 24px;
     font-weight: 500;
     position: relative;
+    transition: all .5s;
 }
 
 
@@ -53,14 +54,14 @@
     padding: 0 50px;
 }
 
-.LoginLink::before {
+.ActiveTab::before {
     content: "";
     position: absolute;
     height: 10px;
     background-color: #5584ff;
     left: 0;
     right: 0;
-    top: 75px;
+    top: 74px;
 }
 
 .UsersField {
@@ -175,8 +176,8 @@
         height: 100px;
     }
 
-    .LoginLink::before {
-        top: 54px;
+    .ActiveTab::before {
+        top: 52px;
     }
 }
 /*

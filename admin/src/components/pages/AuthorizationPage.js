@@ -32,9 +32,10 @@ class AuthorizationPage extends React.Component {
                         <img src={Logo} alt="Logo"/>
                     </div>
                     <ul className="AuthPanel">
-                        <li className="RegisterLink" onClick={() => this.tabChange('a')}>Register</li>
-                        <li className="LoginLink" onClick={() => this.tabChange('b')}>Login</li>
+                        <li className={this.state.tab === 'a' ? 'ActiveTab RegisterLink' : 'RegisterLink'} onClick={() => this.tabChange('a')}>Register</li>
+                        <li className={this.state.tab === 'b' ? 'ActiveTab LoginLink' : 'LoginLink'} onClick={() => this.tabChange('b')}>Login</li>
                     </ul>
+
                 </header>
                 <div className="Authorization">
                     {this.state.tab === 'a' ?
