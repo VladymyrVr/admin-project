@@ -118,7 +118,7 @@
 }
 
 
-.ActiveLink::after {
+.active::after {
     content: "";
     position: absolute;
     height: 100%;

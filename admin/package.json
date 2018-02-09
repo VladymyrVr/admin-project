@@ -5,6 +5,7 @@
   "dependencies": {
     "@fortawesome/react-fontawesome": "0.0.17",
     "font-awesome": "^4.7.0",
+    "material-ui": "^0.20.0",
     "rc-progress": "^2.2.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

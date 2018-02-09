@@ -13,7 +13,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <section className="HomePage">
-                <h3>Hello John!</h3>
+                <h3>Hello <span>{JSON.parse(localStorage.getItem("username"))}</span>!</h3>
                 <div className="FlexWrapper">
                     <InfoSalesCard/>
                     <HomeActiveSales/>
