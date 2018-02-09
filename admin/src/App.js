@@ -1,27 +1,17 @@
 import React, {Component} from 'react';
-import {Route, Redirect} from 'react-router-dom';
+import { Route} from 'react-router-dom';
+
+import AuthorizationPage from "./components/pages/AuthorizationPage";
 
 import './responsive.css';
 import 'font-awesome/css/font-awesome.min.css';
 
 
 //components
-import AuthorizationPage from "./components/pages/AuthorizationPage";
 import Privated from './containers/Privated';
+import DefaultLayout from './containers/DefaultLayout';
 
-const DefaultLayout = ({component: Component, ...rest}) => {
 
-    if (!(localStorage.getItem("username") && localStorage.getItem("password"))) {
-        return <Redirect to="/login"/>
-    }
-    return (
-        <Route {...rest} render={() => {
-            return (
-                <Component/>
-            );
-        }}/>
-    )
-};
 
 
 class App extends Component {
@@ -36,8 +26,6 @@ class App extends Component {
                 <DefaultLayout exact path="/settings" component={Privated}/>
 
                 <Route path="/login" component={AuthorizationPage}/>
-
-
             </div>
         );
     }
