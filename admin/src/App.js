@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
 import { Route} from 'react-router-dom';
 
-import AuthorizationPage from "./components/pages/AuthorizationPage";
-
 import './responsive.css';
 import 'font-awesome/css/font-awesome.min.css';
-
 
 //components
 import Privated from './containers/Privated';
 import DefaultLayout from './containers/DefaultLayout';
+import AuthorizationPage from "./components/pages/AuthorizationPage";
 
 
 
