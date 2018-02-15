@@ -3,7 +3,7 @@ import { Route, Redirect} from 'react-router-dom';
 
 const DefaultLayout = ({component: Component, ...rest}) => {
 
-    if (!(localStorage.getItem("username") && localStorage.getItem("password"))) {
+    if (!localStorage.getItem('checkUser')){
         return <Redirect to="/login"/>
     }
 

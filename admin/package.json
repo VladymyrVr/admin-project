@@ -4,8 +4,12 @@
   "private": true,
   "dependencies": {
     "@fortawesome/react-fontawesome": "0.0.17",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
     "font-awesome": "^4.7.0",
     "material-ui": "^0.20.0",
+    "mongodb": "^3.0.2",
+    "mongoose": "^5.0.5",
     "rc-progress": "^2.2.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -19,5 +23,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "proxy": "http://localhost:4000"
 }

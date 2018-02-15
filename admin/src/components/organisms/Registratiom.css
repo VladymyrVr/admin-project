@@ -30,6 +30,11 @@
     margin-top: 50px;
 }
 
+
+.SnackBarStyle > div {
+    min-width: auto !important;
+}
+
 /*
     Responsive
  */

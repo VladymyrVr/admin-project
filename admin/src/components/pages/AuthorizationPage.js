@@ -1,6 +1,5 @@
 import  React from 'react';
 
-
 import './AuthorizationPage.css';
 
 import Logo from '../../assets/img/logo.png'

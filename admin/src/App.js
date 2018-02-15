@@ -6,7 +6,7 @@ import 'font-awesome/css/font-awesome.min.css';
 
 //components
 import Privated from './containers/Privated';
-import DefaultLayout from './containers/DefaultLayout';
+import PrivateLayout from './containers/PrivateLayout';
 import AuthorizationPage from "./components/pages/AuthorizationPage";
 
 
@@ -16,12 +16,12 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <DefaultLayout exact path="/" component={Privated}/>
-                <DefaultLayout exact path="/workflow" component={Privated}/>
-                <DefaultLayout exact path="/statistics" component={Privated}/>
-                <DefaultLayout exact path="/calendar" component={Privated}/>
-                <DefaultLayout exact path="/users" component={Privated}/>
-                <DefaultLayout exact path="/settings" component={Privated}/>
+                <PrivateLayout exact path="/" component={Privated}/>
+                <PrivateLayout exact path="/workflow" component={Privated}/>
+                <PrivateLayout exact path="/statistics" component={Privated}/>
+                <PrivateLayout exact path="/calendar" component={Privated}/>
+                <PrivateLayout exact path="/users" component={Privated}/>
+                <PrivateLayout exact path="/settings" component={Privated}/>
 
                 <Route path="/login" component={AuthorizationPage}/>
             </div>

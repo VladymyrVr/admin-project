@@ -1,5 +1,7 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom'
+import {withRouter, Redirect} from 'react-router-dom'
+import Snackbar from 'material-ui/Snackbar';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import './Login.css';
 
@@ -13,24 +15,45 @@ class Login extends React.Component {
 
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            open: false
         }
     }
 
-    handleSubmit =(e) => {
+    handleSubmit = (e) => {
         e.preventDefault();
-        let username = JSON.parse(localStorage.getItem("username")),
-            password = JSON.parse(localStorage.getItem("password"));
 
-        if(username === this.state.username && password === this.state.password) {
-            this.props.history.push('/')
-        } else {
-           alert('Your username or login is incorrect');
-            this.setState ({
-               username: '',
-                password: ''
+        let userData = {
+            login: this.state.username,
+            pass: this.state.password
+        };
+
+        fetch('/api/auth', {
+            headers: {
+                'Content-type': 'application/json'
+            },
+            method: 'post',
+            body: JSON.stringify(userData),
+        })
+            .then(res => res.json())
+            .then(res => {
+                if (res.check === true) {
+                    JSON.stringify(localStorage.setItem("checkUser", res.check));
+                    this.props.history.push('/')
+                } else {
+                    this.setState({
+                        username: '',
+                        password: '',
+                        open: true
+                    });
+                }
             });
-        }
+    };
+
+    handleRequestClose = () => {
+        this.setState({
+            open: false,
+        });
     };
 
 
@@ -43,16 +66,25 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className="Login">
-                <h2>Welcome <span>back!</span></h2>
-                <form className="LoginForm" onSubmit={this.handleSubmit}>
-                    <input className="UsersField" name="username" type="text" placeholder="Username"
-                           value={this.state.username} onChange={this.handleChange} required/>
-                    <input className="PasswordField" name="password" type="password" placeholder="Password"
-                           value={this.state.password} onChange={this.handleChange} required/>
-                    <EnterButton/>
-                </form>
-            </div>
+            <MuiThemeProvider>
+                <div className="Login">
+                    <h2>Welcome <span>back!</span></h2>
+                    <form className="LoginForm" onSubmit={this.handleSubmit}>
+                        <input className="UsersField" name="username" type="text" placeholder="Username"
+                               value={this.state.username} onChange={this.handleChange} required/>
+                        <input className="PasswordField" name="password" type="password" placeholder="Password"
+                               value={this.state.password} onChange={this.handleChange} required/>
+                        <EnterButton/>
+                        <Snackbar
+                            open={this.state.open}
+                            message="Your username or login is incorrect, please try again!"
+                            autoHideDuration={2500}
+                            onRequestClose={this.handleRequestClose}
+                            className="SnackBarStyle"
+                        />
+                    </form>
+                </div>
+            </MuiThemeProvider>
         )
     }
 }
