@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter, Redirect} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import Snackbar from 'material-ui/Snackbar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -37,7 +37,7 @@ class Login extends React.Component {
         })
             .then(res => res.json())
             .then(res => {
-                if (res.check === true) {
+                if (res.check) {
                     JSON.stringify(localStorage.setItem("checkUser", res.check));
                     this.props.history.push('/')
                 } else {

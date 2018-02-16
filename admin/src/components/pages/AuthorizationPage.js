@@ -23,6 +23,14 @@ class AuthorizationPage extends React.Component {
         })
     };
 
+    componentWillMount() {
+        if (localStorage.getItem('checkUser')) {
+            return (
+            this.props.history.push('/')
+            )
+        }
+}
+
     render() {
         return (
             <section className="AuthorizationPage">

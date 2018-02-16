@@ -1,21 +1,26 @@
 import React from 'react';
 import { Route, Redirect} from 'react-router-dom';
 
-const DefaultLayout = ({component: Component, ...rest}) => {
+class PrivateLayout extends React.Component {
 
-    if (!localStorage.getItem('checkUser')){
-        return <Redirect to="/login"/>
-    }
-
-
+    render ()  {
+    const {component: Component, ...rest} =  this.props;
     return (
         <Route {...rest} render={() => {
-            return (
-                <Component/>
-            );
+            if (!localStorage.getItem('checkUser')){
+                return <Redirect to="/login"/>
+            }
+            else if (localStorage.getItem('checkUser')) {
+                return (
+                    <Component/>
+                )
+            }
         }}/>
 
     )
 };
+}
 
-export default DefaultLayout;
+
+
+export default PrivateLayout;
