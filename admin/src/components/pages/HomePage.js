@@ -9,7 +9,7 @@ import HomeTasksItem from "../organisms/HomeTasksItem";
 import HomeMessagesItem from "../organisms/HomeMessagesItem";
 import HomeActivityItem from "../organisms/HomeActivityItem";
 
-const forSalesData = ['last year', 'last month', 'last week'];
+const forSalesData = ['Last year', 'Last month', 'Last week'];
 
 class HomePage extends React.Component {
     render() {
