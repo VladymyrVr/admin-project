@@ -5,7 +5,6 @@ import './Select.css';
 class Select extends React.Component {
 
     handleChange = (e) => {
-        console.log(e.target.value)
         if(e.target.value === 'Last year' ){
             fetch('/api/sales/last-year', {
                 headers: {
@@ -16,7 +15,8 @@ class Select extends React.Component {
             })
                 .then(res => res.json())
                 .then(res => {
-                    console.log(res.body)
+                    let salesData = res;
+                    console.log(salesData);
                 });
         }
         else if (e.target.value === 'Last month') {
@@ -29,7 +29,8 @@ class Select extends React.Component {
             })
                 .then(res => res.json())
                 .then(res => {
-                    console.log(res.body)
+                    let salesData = res;
+                    console.log(salesData);
                 });
         }
         else if (e.target.value === 'Last week') {
@@ -42,10 +43,13 @@ class Select extends React.Component {
             })
                 .then(res => res.json())
                 .then(res => {
-                    console.log(res.body)
+                    let salesData = res;
+                    let chart = this.salesChart.getChart();
+                    chart.series[0].setData(salesData, true)
                 });
         }
     };
+
 
     render() {
         return(

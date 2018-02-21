@@ -53,26 +53,7 @@ let SalesLastMonth = [
 ];
 
 let SalesLastWeek = [
-    {
-        category: 'Websites',
-        value: 7
-    },
-    {
-        category: 'Logo',
-        value: 4
-    },
-    {
-        category: 'Social Media',
-        value: 23
-    },
-    {
-        category: 'Adwords',
-        value: 3
-    },
-    {
-        category: 'E-Commerce',
-        value: 6
-    }
+    ["Websites",7],["Logo", 4],["Social Media",6],["Adwords", 3], ["E-Commerce", 5]
 ];
 
 
@@ -105,24 +86,22 @@ App.post('/api/auth', (req, res) => {
 });
 
 App.get('/api/sales/last-year', (req, res) => {
-    const lastYear = SalesLastYear;
-    return res.json({
-        lastYear
-    })
+
+    return res.json(
+        SalesLastYear
+    )
 });
 
 App.get('/api/sales/last-month', (req, res) => {
-    const lastMonth = SalesLastMonth;
-    return res.json({
-        lastYear
-    })
+    return res.json(
+        SalesLastMonth
+    )
 });
 
 App.get('/api/sales/last-week', (req, res) => {
-    const lastWeek = SalesLastWeek;
-    return res.json({
-        lastWeek
-    })
+    return res.json(
+        SalesLastWeek
+    )
 });
 
 App.listen(4000, () => {

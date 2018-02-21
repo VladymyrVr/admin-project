@@ -10,7 +10,7 @@ class InfoSalesCard extends React.Component {
     render() {
         return (
             <div className="InfoSalesCard">
-                <HomeSortPanel category="Your Sales" data={this.props.data}/>
+                <HomeSortPanel category="Your Sales" data={this.props.data} />
                 <GeneralSales/>
             </div>
         )

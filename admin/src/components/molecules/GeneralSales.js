@@ -10,7 +10,7 @@ class GeneralSales extends React.Component {
     render() {
         return(
             <div className="GeneralSales">
-               <ReactHighcharts config={SalesChart}/>
+               <ReactHighcharts config={SalesChart} ref={(chart) => { this.salesChart = chart;}}/>
             </div>
         )
     }
