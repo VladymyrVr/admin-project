@@ -28,7 +28,7 @@ class Registration extends React.Component {
             email : this.state.email,
         };
 
-        fetch('/api/user' , {
+        fetch('/api/user/register' , {
             headers: {
               'Content-type': 'application/json'
             },

@@ -1,29 +1,35 @@
-import React, {Component} from 'react';
-import { Route} from 'react-router-dom';
+import React from 'react';
+import {Route, Switch} from 'react-router-dom';
 
 import './responsive.css';
 import 'font-awesome/css/font-awesome.min.css';
 
 //components
-import Privated from './containers/Privated';
 import PrivateLayout from './containers/PrivateLayout';
 import AuthorizationPage from "./components/pages/AuthorizationPage";
+import HomePage from "./components/pages/HomePage";
+import Workflow from "./components/pages/Workflow";
+import Statistics from "./components/pages/Statistics";
+import Calendar from "./components/pages/Calendar";
+import Users from "./components/pages/Users";
+import Settings from "./components/pages/Settings"
 
 
 
-
-class App extends Component {
+class App extends React.Component {
     render() {
         return (
             <div className="App">
-                <PrivateLayout exact path="/" component={Privated}/>
-                <PrivateLayout exact path="/workflow" component={Privated}/>
-                <PrivateLayout exact path="/statistics" component={Privated}/>
-                <PrivateLayout exact path="/calendar" component={Privated}/>
-                <PrivateLayout exact path="/users" component={Privated}/>
-                <PrivateLayout exact path="/settings" component={Privated}/>
+                <Switch>
+                    <Route path="/login" component={AuthorizationPage}/>
 
-                <Route path="/login" component={AuthorizationPage}/>
+                    <PrivateLayout exact path="/" component={HomePage}/>
+                    <PrivateLayout exact path="/workflow" component={Workflow}/>
+                    <PrivateLayout exact path="/statistics" component={Statistics}/>
+                    <PrivateLayout exact path="/calendar" component={Calendar}/>
+                    <PrivateLayout exact path="/users" component={Users}/>
+                    <PrivateLayout exact path="/settings" component={Settings}/>
+                </Switch>
             </div>
         );
     }

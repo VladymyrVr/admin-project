@@ -14,9 +14,9 @@ class LeftBar extends React.Component {
                         <li><NavLink className="Home" activeclassname="ActiveLink" exact  to="/">Home</NavLink></li>
                         <li><NavLink className="Workflow" activeclassname="ActiveLink" to="/workflow">Workflow</NavLink></li>
                         <li><NavLink className="Statistics" activeclassname="ActiveLink"to="/statistics">Statistics</NavLink></li>
-                        <li><a className="Calendar" activeclassname="ActiveLink" href="">Calendar</a></li>
+                        <li><NavLink className="Calendar" activeclassname="ActiveLink" to="/calendar">Calendar</NavLink></li>
                         <li><NavLink className="User" activeclassname="ActiveLink" to="/users">Users</NavLink></li>
-                        <li><a className="Settings" activeclassname="ActiveLink" href="">Settings</a></li>
+                        <li><NavLink className="Settings" activeclassname="ActiveLink" to="/settings">Settings</NavLink></li>
                     </ul>
                 </nav>
             </div>

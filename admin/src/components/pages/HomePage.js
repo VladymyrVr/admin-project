@@ -9,13 +9,16 @@ import HomeTasksItem from "../organisms/HomeTasksItem";
 import HomeMessagesItem from "../organisms/HomeMessagesItem";
 import HomeActivityItem from "../organisms/HomeActivityItem";
 
+const forSalesData = ['last year', 'last month', 'last week'];
+
 class HomePage extends React.Component {
     render() {
+        const userName = JSON.parse(localStorage.getItem("user"));
         return (
             <section className="HomePage">
-                <h3>Hello <span>Yoyo</span>!</h3>
+                <h3>Hello {userName}</h3>
                 <div className="FlexWrapper">
-                    <InfoSalesCard/>
+                    <InfoSalesCard data={forSalesData}/>
                     <HomeActiveSales/>
                 </div>
                 <ul className="HomeActiveLists">

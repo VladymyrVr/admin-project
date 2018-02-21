@@ -4,26 +4,34 @@ const App = express();
 
 App.use(bodyParser.json());
 
-let userExist = {
-    username: 'Vova',
-    pass: '159753'
-};
+let userExist = [{username: 'Vova', pass: '159753'}];
 
-App.post('/api/user', (req, res) => {
-    console.log(req.body);
+
+
+App.post('/api/user/register', (req, res) => {
+    userExist.push({username: req.body.username, pass: req.body.password})
     console.log('Registration was successfully');
-
+    console.log(userExist);
     return res.json()
 });
 
 App.post('/api/auth', (req, res) => {
-    const username = req.body.login;
-    const pass = req.body.pass;
+    const user = req.body.login;
+    const password = req.body.pass;
 
-    if(userExist.username === username && userExist.pass === pass) {
-        return res.json({check: true})
+    let userCheck = userExist.filter((item) => {
+       return (item.username === user && item.pass === password)
+    });
+
+    if(userCheck[0] !== undefined) {
+        console.log('true');
+        return res.json({
+            check: true,
+            username: userCheck[0].username
+        })
     }
     else {
+        console.log(' userCheck false');
         return res.json({check: false})
     }
 });

@@ -39,6 +39,7 @@ class Login extends React.Component {
             .then(res => {
                 if (res.check) {
                     JSON.stringify(localStorage.setItem("checkUser", res.check));
+                    localStorage.setItem("user", JSON.stringify(res.username));
                     this.props.history.push('/')
                 } else {
                     this.setState({

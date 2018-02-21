@@ -2,16 +2,15 @@ import React from 'react';
 
 import './HomeSortPanel.css';
 
+//components
+import Select from "../atoms/Select";
+
 class HomeSortPanel extends React.Component {
     render() {
         return(
             <div className="HomeSortPanel">
                 <p className="CategoryPanel">{this.props.category}</p>
-                <select>
-                    <option required>Period: Last Year</option>
-                    <option>Period: Last Month</option>
-                    <option>Period: Last Week</option>
-                </select>
+                <Select data={this.props.data}/>
             </div>
         )
     }
