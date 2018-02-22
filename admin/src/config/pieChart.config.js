@@ -28,7 +28,7 @@ const SalesChart = {
     },
     series: [{
         data: [
-            ["Websites",200],["Logo", 125],["Social Media",285],["Adwords", 69], ["E-Commerce", 185]
+
         ],
         innerSize: '60%',
         showInLegend:true,

@@ -6,50 +6,12 @@ App.use(bodyParser.json());
 
 let userExist = [{username: 'Vova', pass: '159753'}];
 
-let SalesLastYear = [
-    {
-        category: 'Websites',
-        value: 220
-    },
-    {
-        category: 'Logo',
-        value: 125
-    },
-    {
-        category: 'Social Media',
-        value: 285
-    },
-    {
-        category: 'Adwords',
-        value: 69
-    },
-    {
-        category: 'E-Commerce',
-        value: 185
-    }
+let SalesLastMonth = [
+    ["Websites",65],["Logo", 21],["Social Media",75],["Adwords", 17], ["E-Commerce", 24]
 ];
 
-let SalesLastMonth = [
-    {
-        category: 'Websites',
-        value: 65
-    },
-    {
-        category: 'Logo',
-        value: 21
-    },
-    {
-        category: 'Social Media',
-        value: 75
-    },
-    {
-        category: 'Adwords',
-        value: 17
-    },
-    {
-        category: 'E-Commerce',
-        value: 24
-    }
+let SalesLastYear = [
+    ["Websites",220],["Logo", 125],["Social Media",285],["Adwords", 69], ["E-Commerce", 185]
 ];
 
 let SalesLastWeek = [
@@ -86,7 +48,6 @@ App.post('/api/auth', (req, res) => {
 });
 
 App.get('/api/sales/last-year', (req, res) => {
-
     return res.json(
         SalesLastYear
     )
@@ -103,6 +64,7 @@ App.get('/api/sales/last-week', (req, res) => {
         SalesLastWeek
     )
 });
+
 
 App.listen(4000, () => {
     console.log("Server shutdown");
