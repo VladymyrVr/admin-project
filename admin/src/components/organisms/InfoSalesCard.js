@@ -82,7 +82,7 @@ class InfoSalesCard extends React.Component {
                     this.setState({
                         salesData: res
                     });
-                    let chart = this.salesC  <Select data={this.props.data}/>hart.getChart();
+                    let chart = this.salesChart.getChart();
                     chart.series[0].setData(this.state.salesData, true);
                 });
         }
