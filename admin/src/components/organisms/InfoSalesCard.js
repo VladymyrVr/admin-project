@@ -68,6 +68,7 @@ class InfoSalesCard extends React.Component {
                     }
                     let chart = this.salesChart.getChart();
                     chart.series[0].setData(this.state.salesData, true);
+                    chart.redraw();
                     chart.setTitle({text: sum});
                 });
         }

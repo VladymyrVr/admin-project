@@ -3,6 +3,7 @@ let HomeChartConfig = {
         chart: {
             type: 'pie',
             height: '310',
+
         },
         plotOptions: {
             pie: {
@@ -10,7 +11,9 @@ let HomeChartConfig = {
                 colors: ['#25396e', '#3755a4', '#4164c2', '#4b74e0', '#5584ff'],
                 borderWidth: 1,
                 borderColor: null
-
+            },
+            series: {
+                allowPointSelect: true,
             }
         },
         title: {
