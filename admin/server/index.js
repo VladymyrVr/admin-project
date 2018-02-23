@@ -7,7 +7,7 @@ App.use(bodyParser.json());
 let userExist = [{username: 'Vova', pass: '159753'}];
 
 let SalesLastMonth = [
-    ["Websites",65],["Logo", 21],["Social Media",75],["Adwords", 17], ["E-Commerce", 24]
+    ["Social Media",75],["Websites",65],["E-Commerce", 24],["Logo", 21], ["Adwords", 17]
 ];
 
 let SalesLastYear = [
@@ -15,7 +15,7 @@ let SalesLastYear = [
 ];
 
 let SalesLastWeek = [
-    ["Websites",7],["Logo", 4],["Social Media",6],["Adwords", 3], ["E-Commerce", 5]
+    ["Websites",7],["Social Media",6],["E-Commerce", 5],["Logo", 4], ["Adwords", 3]
 ];
 
 
