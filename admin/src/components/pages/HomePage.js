@@ -19,7 +19,7 @@ class HomePage extends React.Component {
                 <h3>Hello {userName}</h3>
                 <div className="FlexWrapper">
                     <InfoSalesCard data={forSalesData}/>
-                    <HomeActiveSales/>
+                    <HomeActiveSales data={forSalesData}/>
                 </div>
                 <ul className="HomeActiveLists">
                     <HomeTasksItem/>

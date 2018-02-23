@@ -3,7 +3,7 @@ import ReactHighcharts from 'react-highcharts';
 
 import './InfoSalesCard.css';
 
-import SalesChart from '../../config/pieChart.config';
+import HomeChartConfig from '../../config/HomeChartConfig';
 
 
 class InfoSalesCard extends React.Component {
@@ -138,7 +138,7 @@ class InfoSalesCard extends React.Component {
                         }
                     </select>
                 </div>
-                <ReactHighcharts config={SalesChart} ref={(chart) => {
+                <ReactHighcharts config={HomeChartConfig.SalesChart} ref={(chart) => {
                     this.salesChart = chart;
                 }}/>
             </div>
