@@ -6,8 +6,8 @@ import './InfoSalesCard.css';
 import SalesChart from '../../config/pieChart.config';
 
 
-
 class InfoSalesCard extends React.Component {
+
     constructor(props) {
         super(props);
 
@@ -29,9 +29,19 @@ class InfoSalesCard extends React.Component {
                 this.setState({
                     salesData: res
                 });
+                let salesArr = this.state.salesData;
+                let sum = 0;
+                for (let index in salesArr) {
+                    for (let salesArrIndex in salesArr[index]) {
+                        sum += (typeof salesArr[index][salesArrIndex] === "number") ?
+                            salesArr[index][salesArrIndex] : 0;
+                    }
+                }
                 let chart = this.salesChart.getChart();
                 chart.series[0].setData(this.state.salesData, true);
+                chart.setTitle({text: sum});
             });
+
     }
 
     handleChange = (e) => {
@@ -48,8 +58,17 @@ class InfoSalesCard extends React.Component {
                     this.setState({
                         salesData: res
                     });
+                    let salesArr = this.state.salesData;
+                    let sum = 0;
+                    for (let index in salesArr) {
+                        for (let salesArrIndex in salesArr[index]) {
+                            sum += (typeof salesArr[index][salesArrIndex] === "number") ?
+                                salesArr[index][salesArrIndex] : 0;
+                        }
+                    }
                     let chart = this.salesChart.getChart();
                     chart.series[0].setData(this.state.salesData, true);
+                    chart.setTitle({text: sum});
                 });
         }
         else if (e.target.value === 'Last month') {
@@ -65,8 +84,17 @@ class InfoSalesCard extends React.Component {
                     this.setState({
                         salesData: res
                     });
+                    let salesArr = this.state.salesData;
+                    let sum = 0;
+                    for (let index in salesArr) {
+                        for (let salesArrIndex in salesArr[index]) {
+                            sum += (typeof salesArr[index][salesArrIndex] === "number") ?
+                                salesArr[index][salesArrIndex] : 0;
+                        }
+                    }
                     let chart = this.salesChart.getChart();
                     chart.series[0].setData(this.state.salesData, true);
+                    chart.setTitle({text: sum});
                 });
         }
         else if (e.target.value === 'Last week') {
@@ -82,8 +110,17 @@ class InfoSalesCard extends React.Component {
                     this.setState({
                         salesData: res
                     });
+                    let salesArr = this.state.salesData;
+                    let sum = 0;
+                    for (let index in salesArr) {
+                        for (let salesArrIndex in salesArr[index]) {
+                            sum += (typeof salesArr[index][salesArrIndex] === "number") ?
+                                salesArr[index][salesArrIndex] : 0;
+                        }
+                    }
                     let chart = this.salesChart.getChart();
                     chart.series[0].setData(this.state.salesData, true);
+                    chart.setTitle({text: sum});
                 });
         }
     };

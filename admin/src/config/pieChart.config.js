@@ -13,11 +13,26 @@ const SalesChart = {
         }
     },
     title: {
-        text: 1560,
+        text: '',
         verticalAlign: 'middle',
         floating: true,
         x: -65,
-        y: 0
+        y: 0,
+        style: {
+            color: '#8492af',
+            font: '700 36px "Roboto", sans-serif'
+        }
+    },
+    subtitle: {
+        text: 'sales',
+        verticalAlign: 'middle',
+        floating: true,
+        x: -65,
+        y: 20,
+        style: {
+            color: '#8492af',
+            font: '300 20px "Roboto", sans-serif'
+        }
     },
     legend: {
         align: 'right',
@@ -30,7 +45,7 @@ const SalesChart = {
         data: [
 
         ],
-        innerSize: '60%',
+        innerSize: '65%',
         showInLegend:true,
         dataLabels: {
             enabled: false
