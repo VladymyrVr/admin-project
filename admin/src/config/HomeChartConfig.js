@@ -100,6 +100,7 @@ let HomeChartConfig = {
         },
         series: [{
             data: [],
+            lineWidth: 4,
             showInLegend: false,
             label: false,
             name: 'Report graph value',

@@ -1,11 +1,15 @@
 import React from 'react';
+import ReactHighcharts from 'react-highcharts';
+
+import StatisticChartConfig from '../../config/StatisticChartConfig';
+
 
 import './Statistics.css';
 
 //components
 import StatsCard from "../molecules/StatsCard";
-import ActiveUsers from "../organisms/ActiveUsers";
 import TotalSales from "../organisms/TotalSales";
+import ControlPanel from "../molecules/ControlPanel";
 
 const StatsData = [
     {
@@ -22,18 +26,103 @@ const StatsData = [
     }
 ];
 
+const SelectData = ['Last year', 'Last month', 'Last week'];
+
 
 class Statistics extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            activeData: []
+        }
+    }
+
+    componentWillMount() {
+        fetch('/api/report/last-year', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-type': 'application/json'
+            },
+            method: 'GET',
+        })
+            .then(res => res.json())
+            .then(res => {
+                this.setState({
+                    activeData: res
+                });
+                let chart = this.activeChart.getChart();
+                chart.series[0].setData(this.state.activeData, true);
+            });
+    }
+
+    handleChange = (e) => {
+        if (e.target.value === 'Last year') {
+            fetch('/api/report/last-year', {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-type': 'application/json'
+                },
+                method: 'GET',
+            })
+                .then(res => res.json())
+                .then(res => {
+                    this.setState({
+                        activeData: res
+                    });
+                    let chart = this.activeChart.getChart();
+                    chart.series[0].setData(this.state.activeData, true);
+                });
+        }
+        else if (e.target.value === 'Last month') {
+            fetch('/api/report/last-month', {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-type': 'application/json'
+                },
+                method: 'GET',
+            })
+                .then(res => res.json())
+                .then(res => {
+                    this.setState({
+                        activeData: res
+                    });
+                    let chart = this.activeChart.getChart();
+                    chart.series[0].setData(this.state.activeData, true);
+                });
+        }
+        else if (e.target.value === 'Last week') {
+            fetch('/api/report/last-week', {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-type': 'application/json'
+                },
+                method: 'GET',
+            })
+                .then(res => res.json())
+                .then(res => {
+                    this.setState({
+                        activeData: res
+                    });
+                    let chart = this.activeChart.getChart();
+                    chart.series[0].setData(this.state.activeData, true);
+                });
+        }
+
+    };
+
     render() {
         return (
             <section className="StatisticsPage">
                 <div className="StatisticControlPanel">
-                    <p>Lorem Ipsum Stats</p>
+                    <p>Stats</p>
                     <div className="SelectPanels">
-                        <select className="Period">
-                            <option required>Period: Last Month</option>
-                            <option>Period: Last week</option>
-                            <option>Period: Last year</option>
+                        <select onChange={this.handleChange}>
+                            {
+                                SelectData && SelectData.map((item, index) => {
+                                    return <option key={index} value={item}>{item}</option>
+                                })
+                            }
                         </select>
                         <select className="Type">
                             <option required>Type: Notifications</option>
@@ -52,7 +141,15 @@ class Statistics extends React.Component {
                             })
                         }
                     </ul>
-                    <ActiveUsers/>
+                    <div className="ActiveUsers">
+                        <div className="ActiveUsersPanel">
+                            <h3>Active Users</h3>
+                            <ControlPanel/>
+                        </div>
+                        <ReactHighcharts config={StatisticChartConfig.ActiveUsersChart} ref={(chart) => {
+                            this.activeChart = chart;
+                        }}/>
+                    </div>
                 </div>
                 <TotalSales/>
             </section>
