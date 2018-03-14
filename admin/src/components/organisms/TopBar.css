@@ -133,6 +133,11 @@
     }
 }
 
+.Notification:hover {
+    color: #f83c7b;
+    animation: 1.5s ease-in-out 0s normal none  running trambling-animation;
+}
+
 .RightPanel .Notification::after {
     position: absolute;
     display: block;
@@ -148,10 +153,7 @@
     top: -20%;
     right: -30%;
 }
-.Notification:hover {
-    color: #f83c7b;
-    animation: 1.5s ease-in-out 0s normal none  running trambling-animation;
-}
+
 
 .AvatarWrapper {
     display: inline-block;

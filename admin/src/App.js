@@ -12,9 +12,12 @@ import Workflow from "./components/pages/Workflow";
 import Statistics from "./components/pages/Statistics";
 import Calendar from "./components/pages/Calendar";
 import Users from "./components/pages/Users";
-import Settings from "./components/pages/Settings"
+import Settings from "./components/pages/Settings";
 
+import localizer from 'react-big-calendar/lib/localizers/globalize';
+import globalize from 'globalize';
 
+localizer(globalize);
 
 class App extends React.Component {
     render() {

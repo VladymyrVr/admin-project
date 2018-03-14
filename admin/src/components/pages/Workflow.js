@@ -2,6 +2,7 @@ import React from 'react';
 
 import './Workflow.css';
 
+
 //components
 import ToDoListItem from '../organisms/ToDoListItem';
 
@@ -89,7 +90,7 @@ class Workflow extends React.Component {
         return (
             <section className="WorkflowPage">
                 <div className="ToDoCategory">
-                <p className="Category">To Do <span>(6)</span></p>
+                <p className="Category">To Do <span>({ToDoData.length})</span></p>
                 <ul className="ToDoList">
                     {
                         ToDoData.map(item => {
@@ -101,7 +102,7 @@ class Workflow extends React.Component {
                 </ul>
                 </div>
                 <div className="ToDoInProgress">
-                    <p className="Category">In Progress <span>(3)</span></p>
+                    <p className="Category">In Progress <span>({InProgressData.length})</span></p>
                     <ul className="InProgressList">
                         {
                             InProgressData.map(item => {
@@ -113,7 +114,7 @@ class Workflow extends React.Component {
                     </ul>
                 </div>
                 <div className="ToDoCompleted">
-                    <p className="CategoryCompleted">Completed <span>(4)</span></p>
+                    <p className="CategoryCompleted">Completed <span>({CompletedData.length})</span></p>
                     <ul className="CompletedList">
                         {
                             CompletedData.map(item => {
