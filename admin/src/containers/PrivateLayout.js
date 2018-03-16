@@ -5,7 +5,6 @@ import {Route, Redirect} from 'react-router-dom';
 
 
 import TopBar from "../components/organisms/TopBar";
-import LeftBar from "../components/organisms/LeftBar";
 
 class PrivateLayout extends React.Component {
 
@@ -20,7 +19,6 @@ class PrivateLayout extends React.Component {
                     return (
                         <div>
                             <TopBar/>
-                            <LeftBar/>
                             <Component/>
                         </div>
                     )

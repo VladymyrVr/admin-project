@@ -2,7 +2,7 @@ let HomeChartConfig = {
     SalesChart: {
         chart: {
             type: 'pie',
-            height: '310',
+            height: '330',
 
         },
         plotOptions: {

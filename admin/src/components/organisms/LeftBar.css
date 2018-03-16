@@ -1,19 +1,11 @@
-.FlexWrapper {
-    display: flex;
-    flex-wrap: wrap;
+
+.Logo {
+    padding: 34px 0;
 }
 
-.SideMenu {
-    position: fixed;
-    background: #1c1839;
-    min-height: calc(100vh - 121px);
-    max-width: 320px;
-    width: 100%;
-    float: left;
-    overflow: hidden;
+.Logo img {
+    margin-left: 35px;
 }
-
-
 
 .NavList {
     display: flex;
@@ -21,7 +13,7 @@
 }
 
 .NavList li {
-    padding: 40px 0 40px 40px;
+
     border-top: 2px solid #0b0a10;
     position: relative;
 
@@ -61,6 +53,8 @@
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
+    display: block;
+    padding: 25px 0 25px 40px;
 }
 
 .Home::before {

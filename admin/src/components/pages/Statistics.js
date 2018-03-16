@@ -14,13 +14,11 @@ import ControlPanel from "../molecules/ControlPanel";
 const StatsData = [
     {
         _id: '1',
-        value: '1560',
         type: 'Sales',
         img: 'img/sales-graph.png'
     },
     {
         _id: '2',
-        value: '3230',
         type: 'Views',
         img: 'img/views-graph.png'
     }
@@ -34,7 +32,8 @@ class Statistics extends React.Component {
         super(props);
 
         this.state = {
-            activeData: []
+            activeData: [],
+            sales: ''
         }
     }
 
@@ -49,9 +48,18 @@ class Statistics extends React.Component {
             .then(res => res.json())
             .then(res => {
                 this.setState({
-                    activeData: res
+                    activeData: res,
+                    sales: sum
                 });
                 let chart = this.activeChart.getChart();
+                let salesArr = this.state.activeData;
+                let sum = 0;
+                for (let index in salesArr) {
+                    for (let salesArrIndex in salesArr[index]) {
+                        sum += (typeof salesArr[index][salesArrIndex] === "number") ?
+                            salesArr[index][salesArrIndex] : 0;
+                    }
+                }
                 chart.series[0].setData(this.state.activeData, true);
             });
     }
@@ -68,8 +76,17 @@ class Statistics extends React.Component {
                 .then(res => res.json())
                 .then(res => {
                     this.setState({
-                        activeData: res
+                        activeData: res,
+                        sales: sum
                     });
+                    let salesArr = this.state.activeData;
+                    let sum = 0;
+                    for (let index in salesArr) {
+                        for (let salesArrIndex in salesArr[index]) {
+                            sum += (typeof salesArr[index][salesArrIndex] === "number") ?
+                                salesArr[index][salesArrIndex] : 0;
+                        }
+                    }
                     let chart = this.activeChart.getChart();
                     chart.series[0].setData(this.state.activeData, true);
                 });
@@ -136,7 +153,7 @@ class Statistics extends React.Component {
                         {
                             StatsData.map(item => {
                                 return (
-                                    <StatsCard data={item} key={item._id}/>
+                                    <StatsCard data={item} key={item._id} />
                                 )
                             })
                         }

@@ -2,9 +2,8 @@
     padding: 45px 45px 30px 45px;
     background: #f6f6fa;
     max-width: 100%;
-    width: calc(100vw - 425px);
-    height: auto;
-    margin-left: 320px;
+    width: calc(100% - 90px);
+
 }
 
 .HomePage > h3 {
@@ -16,7 +15,7 @@
 
 .HomePage .FlexWrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     margin-bottom: 30px;
 }
@@ -36,7 +35,7 @@
     Responsive
  */
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1870px) {
 
     .HomePage .FlexWrapper {
         justify-content: center;

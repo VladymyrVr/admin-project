@@ -1,5 +1,7 @@
-@media screen and(max-width: 1366px) {
+@media screen and(max-width: 1440px) {
     .HomePage .FlexWrapper {
         justify-content: center;
     }
+
+
 }

@@ -9,7 +9,7 @@ class StatsCard extends React.Component {
         return(
                 <li className="StatsCard">
                     <div className="ShortInfoStats">
-                    <p className="ValueStats">{this.props.data.value}</p>
+                    <p className="ValueStats">{}</p>
                     <p className="TypeStats">{this.props.data.type}</p>
                     </div>
                     <div className="GraphImg">

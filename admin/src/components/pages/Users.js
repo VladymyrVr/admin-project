@@ -6,7 +6,6 @@ import MenuItem from 'material-ui/MenuItem';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import 'react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
-
 import './Users.css';
 
 
@@ -505,7 +504,20 @@ const UserListData = [
 
 ];
 
+const SelectUsersData = [ 'All Users', 'Online only', 'Offline only'];
 
+let usersOnline = UserListData.filter((item) => {
+    if (item.isOnline === true) {
+        return item;
+    }
+});
+
+
+let usersOffline = UserListData.filter((item) => {
+    if (item.isOnline === false) {
+        return item;
+    }
+});
 
 class Users extends React.Component {
 
@@ -513,6 +525,7 @@ class Users extends React.Component {
         super(props);
         this.state = {
             open: false,
+            usersList: UserListData
         };
     }
 
@@ -530,11 +543,36 @@ class Users extends React.Component {
         });
     };
 
-    ProfileWrap =(cell, row)=>{
-        return(
+    onHandleChange = (e) => {
+        if(e.target.value === 'Online only') {
+            this.setState({
+                usersList: usersOnline
+            });
+            console.log(this.state.usersList)
+        }
+        else if (e.target.value === 'Offline only') {
+            this.setState({
+                usersList: usersOffline
+            });
+            console.log(this.state.usersList)
+        }
+        else if (e.target.value === 'All Users') {
+            this.setState({
+                usersList: UserListData
+            });
+        }
+    };
+
+
+
+
+
+
+    ProfileWrap = (cell, row) => {
+        return (
             <div className="UsersTableTableCell align-items-center">
                 <div className="ProfileInfoWrap">
-                    <p className={row.isOnline ? "Online": "Offline"}></p>
+                    <p className={row.isOnline ? "Online" : "Offline"}></p>
                     <div className="ProfilePhotoWrap">
                         <img src={row.src} alt=""/>
                     </div>
@@ -547,38 +585,38 @@ class Users extends React.Component {
         )
     };
 
-    Activity =(cell, row)=>{
-        return(
+    Activity = (cell, row) => {
+        return (
             <div className="UsersTableTableCell">
                 <p className={row.activity === 'Online now!' ? "ActivityStatus OnlineActive" : "ActivityStatus" +
                     " OfflineActive"}>
-                    {row.activity === 'Online now!' ? "Online now!": row.activity}
+                    {row.activity === 'Online now!' ? "Online now!" : row.activity}
                 </p>
             </div>
         )
     };
 
-    Email =(cell, row)=>{
-        return(
+    Email = (cell, row) => {
+        return (
             <div className="UsersTableTableCell">
                 <a className="email" href="mailto:">{row.mail}</a>
             </div>
         )
     };
 
-    TelNumber =(cell, row)=>{
-        return(
+    TelNumber = (cell, row) => {
+        return (
             <div className="UsersTableTableCell">
                 <a className="tel" href="">{row.phone}</a>
             </div>
         )
     };
 
-    DropDownMenu =()=>{
-        return(
+    DropDownMenu = () => {
+        return (
             <MuiThemeProvider>
                 <div className="UsersTableTableCell Menu">
-                    <button  className="DetailButton" onClick={this.handleOpen}></button>
+                    <button className="DetailButton" onClick={this.handleOpen}></button>
                     <Popover
                         open={this.state.open}
                         anchorEl={this.state.anchorEl}
@@ -599,8 +637,8 @@ class Users extends React.Component {
         )
     };
 
-
     render() {
+
 
         const options = {
             sizePerPage: 7,
@@ -608,19 +646,23 @@ class Users extends React.Component {
             sizePerPageList: [5, 10, 15]
         };
 
+
+
         return (
 
             <section className="Users">
                 <div className="UserStatus">
-                    <p className="UsersGeneral">Users <span>({UserListData.length})</span></p>
-                    <select>
-                        <option required>Active first</option>
-                        <option>Female</option>
-                        <option>Male</option>
+                    <p className="UsersGeneral">Users <span>({this.state.usersList.length})</span></p>
+                    <select onChange={this.onHandleChange}>
+                        {
+                            SelectUsersData.map((item, index) => {
+                                return <option key={index} value={item}>{item}</option>
+                            })
+                        }
                     </select>
                 </div>
                 <BootstrapTable
-                    data={UserListData}
+                    data={this.state.usersList}
                     tableStyle={{border: 'none'}}
                     options={options}
                     pagination
@@ -665,5 +707,6 @@ class Users extends React.Component {
         )
     }
 }
+
 
 export default Users;
