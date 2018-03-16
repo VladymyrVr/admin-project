@@ -2,8 +2,7 @@
     padding: 45px 45px 30px 45px;
     background: #f6f6fa;
     max-width: 100%;
-    width: calc(100vw - 425px);
+    width: calc(100vw - 90px);
     min-height: calc(100vh - 196px);
-    margin-left: 320px;
     flex: 1;
 }

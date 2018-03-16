@@ -21,7 +21,7 @@ class TopBar extends React.Component {
         };
     }
 
-    handleToggle = () =>  {
+    handleToggle = () => {
         this.setState({drawer: !this.state.drawer});
     };
 
@@ -51,7 +51,8 @@ class TopBar extends React.Component {
             <MuiThemeProvider>
                 <header className="TopMenu">
                     <div className={this.state.drawer === false ? "LeftPanel" : "LeftPanel MarginLeft"}>
-                        <button className={this.state.drawer === false ? "BurgerButton" : "BurgerButton HiddenIcon"} onClick={this.handleToggle}></button>
+                        <button className={this.state.drawer === false ? "BurgerButton" : "BurgerButton HiddenIcon"}
+                                onClick={this.handleToggle}></button>
                         <button className="SearchButton"></button>
                     </div>
                     <Drawer open={this.state.drawer} width={320} containerClassName="Drawer">
@@ -60,7 +61,7 @@ class TopBar extends React.Component {
                                 <img src="img/logo.png" alt="Logo"/>
                             </div>
                         </MenuItem>
-                        <MenuItem innerDivStyle={{padding: 0}} >
+                        <MenuItem innerDivStyle={{padding: 0}}>
                             <nav className="SideNav">
                                 <ul className="NavList">
                                     <li><NavLink className="Home" activeclassname="ActiveLink" exact

@@ -1,10 +1,9 @@
 .WorkflowPage {
-    padding: 50px 43px 100px 45px;
+    padding: 50px 40px 100px 45px;
     background: #f6f6fa;
     max-width: 100%;
-    width: calc(100vw - 425px);
+    width: calc(100% - 90px);
     min-height: calc(100vh + 103px);
-    margin-left: 320px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
