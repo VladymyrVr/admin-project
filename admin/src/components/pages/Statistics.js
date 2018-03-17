@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactHighcharts from 'react-highcharts';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import StatisticChartConfig from '../../config/StatisticChartConfig';
 
@@ -8,22 +8,8 @@ import StatisticChartConfig from '../../config/StatisticChartConfig';
 import './Statistics.css';
 
 //components
-import StatsCard from "../molecules/StatsCard";
 import TotalSales from "../organisms/TotalSales";
 import ControlPanel from "../molecules/ControlPanel";
-
-const StatsData = [
-    {
-        _id: '1',
-        type: 'Sales',
-        img: 'img/sales-graph.png'
-    },
-    {
-        _id: '2',
-        type: 'Views',
-        img: 'img/views-graph.png'
-    }
-];
 
 const SelectData = ['Last year', 'Last month', 'Last week'];
 
@@ -34,6 +20,7 @@ class Statistics extends React.Component {
 
         this.state = {
             activeData: [],
+            views: '',
             sales: ''
         }
     }
@@ -49,19 +36,20 @@ class Statistics extends React.Component {
             .then(res => res.json())
             .then(res => {
                 this.setState({
-                    activeData: res,
-                    sales: sum
+                    activeData: res.ReportSalesLastYear,
+                    sales: res.salesSum
                 });
                 let chart = this.activeChart.getChart();
                 let salesArr = this.state.activeData;
                 let sum = 0;
                 for (let index in salesArr) {
-                    for (let salesArrIndex in salesArr[index]) {
-                        sum += (typeof salesArr[index][salesArrIndex] === "number") ?
-                            salesArr[index][salesArrIndex] : 0;
-                    }
+                    sum += (typeof salesArr[index] === "number") ?
+                        salesArr[index] : 0;
                 }
                 chart.series[0].setData(this.state.activeData, true);
+                this.setState({
+                    views: sum
+                });
             });
     }
 
@@ -77,19 +65,20 @@ class Statistics extends React.Component {
                 .then(res => res.json())
                 .then(res => {
                     this.setState({
-                        activeData: res,
-                        sales: sum
+                        activeData: res.ReportSalesLastYear,
+                        sales: res.salesSum
                     });
+                    let chart = this.activeChart.getChart();
                     let salesArr = this.state.activeData;
                     let sum = 0;
                     for (let index in salesArr) {
-                        for (let salesArrIndex in salesArr[index]) {
-                            sum += (typeof salesArr[index][salesArrIndex] === "number") ?
-                                salesArr[index][salesArrIndex] : 0;
-                        }
+                        sum += (typeof salesArr[index] === "number") ?
+                            salesArr[index] : 0;
                     }
-                    let chart = this.activeChart.getChart();
                     chart.series[0].setData(this.state.activeData, true);
+                    this.setState({
+                        views: sum
+                    });
                 });
         }
         else if (e.target.value === 'Last month') {
@@ -103,10 +92,20 @@ class Statistics extends React.Component {
                 .then(res => res.json())
                 .then(res => {
                     this.setState({
-                        activeData: res
+                        activeData: res.ReportSalesLastMonth,
+                        sales: res.salesSum
                     });
                     let chart = this.activeChart.getChart();
+                    let salesArr = this.state.activeData;
+                    let sum = 0;
+                    for (let index in salesArr) {
+                        sum += (typeof salesArr[index] === "number") ?
+                            salesArr[index] : 0;
+                    }
                     chart.series[0].setData(this.state.activeData, true);
+                    this.setState({
+                        views: sum
+                    });
                 });
         }
         else if (e.target.value === 'Last week') {
@@ -120,10 +119,20 @@ class Statistics extends React.Component {
                 .then(res => res.json())
                 .then(res => {
                     this.setState({
-                        activeData: res
+                        activeData: res.ReportSalesLastWeek,
+                        sales: res.salesSum
                     });
                     let chart = this.activeChart.getChart();
+                    let salesArr = this.state.activeData;
+                    let sum = 0;
+                    for (let index in salesArr) {
+                        sum += (typeof salesArr[index] === "number") ?
+                            salesArr[index] : 0;
+                    }
                     chart.series[0].setData(this.state.activeData, true);
+                    this.setState({
+                        views: sum
+                    });
                 });
         }
 
@@ -131,7 +140,8 @@ class Statistics extends React.Component {
 
     render() {
         return (
-            <section className={this.props.statusMenu === false || this.props.statusMenu === undefined ? "StatisticsPage" : "StatisticsPage StatisticsPageActive"}>
+            <section
+                className={this.props.statusMenu === false || this.props.statusMenu === undefined ? "StatisticsPage" : "StatisticsPage StatisticsPageActive"}>
                 <div className="StatisticControlPanel">
                     <p>Stats</p>
                     <div className="SelectPanels">
@@ -151,13 +161,24 @@ class Statistics extends React.Component {
                 </div>
                 <div className="StatsInfo">
                     <ul className="StatsLIst">
-                        {
-                            StatsData.map(item => {
-                                return (
-                                    <StatsCard data={item} key={item._id} />
-                                )
-                            })
-                        }
+                        <li className="StatsCard">
+                            <div className="ShortInfoStats">
+                                <p className="ValueStats">{this.state.sales}</p>
+                                <p className="TypeStats">Sales</p>
+                            </div>
+                            <div className="GraphImg">
+                                <img src='img/sales-graph.png' alt="Graphic of Sales"/>
+                            </div>
+                        </li>
+                        <li className="StatsCard">
+                            <div className="ShortInfoStats">
+                                <p className="ValueStats">{this.state.views}</p>
+                                <p className="TypeStats">Views</p>
+                            </div>
+                            <div className="GraphImg">
+                                <img src='img/views-graph.png' alt="Graphic of views"/>
+                            </div>
+                        </li>
                     </ul>
                     <div className="ActiveUsers">
                         <div className="ActiveUsersPanel">

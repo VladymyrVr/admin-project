@@ -84,6 +84,49 @@
     font-weight: 700;
     line-height: 14px;
 }
+
+.StatsCard {
+    max-width: 400px;
+    width: 100%;
+    padding: 0 40px;
+    height: 230px;
+    background: #fff;
+    border: 1px solid rgba(132, 146, 175, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.StatsCard:hover .GraphImg {
+    transform: scale(1.2);
+}
+
+.StatsCard:hover .TypeStats  {
+    color: #0b0a10;
+}
+
+.StatsCard:hover .ValueStats  {
+    color: #0b0a10;
+}
+
+.GraphImg {
+    transition: all .5s;
+}
+.StatsCard .TypeStats {
+    color: #8492af;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 14px;
+    text-align: center;
+}
+
+.StatsCard .ValueStats {
+    color: #8492af;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
 /*
     Responsive
  */
