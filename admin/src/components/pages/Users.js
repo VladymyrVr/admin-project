@@ -507,18 +507,20 @@ const UserListData = [
 
 const SelectUsersData = [ 'All Users', 'Online only', 'Offline only'];
 
-let usersOnline = UserListData.filter((item) => {
+const usersOnline = UserListData.filter((item) => {
     if (item.isOnline === true) {
         return item;
     }
 });
 
 
-let usersOffline = UserListData.filter((item) => {
+const usersOffline = UserListData.filter((item) => {
     if (item.isOnline === false) {
         return item;
     }
 });
+
+
 
 class Users extends React.Component {
 
@@ -529,6 +531,8 @@ class Users extends React.Component {
             usersList: UserListData
         };
     }
+
+
 
     handleOpen = (e) => {
         e.preventDefault();
@@ -639,8 +643,6 @@ class Users extends React.Component {
     };
 
     render() {
-
-
         const options = {
             sizePerPage: 7,
             hideSizePerPage: true,

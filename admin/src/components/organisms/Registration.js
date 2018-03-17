@@ -15,7 +15,6 @@ class Registration extends React.Component {
         this.state = {
             username: '',
             password: '',
-            email: '',
             open: false
         }
     }
@@ -25,7 +24,6 @@ class Registration extends React.Component {
         let persondata = {
             username : this.state.username,
             password : this.state.password,
-            email : this.state.email,
         };
 
         fetch('/api/user/register' , {
@@ -70,11 +68,6 @@ class Registration extends React.Component {
                                value={this.state.username} onChange={this.handleChange} required/>
                         <input className="PasswordField" name="password" type="password" placeholder="Password"
                                value={this.state.password} onChange={this.handleChange} required/>
-                        <div className="EmailInput">
-                            <input className="EmailField" type="email" placeholder="Email" name="email"
-                                   value={this.state.email} onChange={this.handleChange}/>
-                            <span className="EmailIcon"><i className="fas fa-envelope"></i></span>
-                        </div>
                         <EnterButton/>
                         <Snackbar
                             open={this.state.open}
