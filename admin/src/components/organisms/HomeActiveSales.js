@@ -25,7 +25,7 @@ class HomeActiveSales extends React.Component {
             .then(res => res.json())
             .then(res => {
                 this.setState({
-                    reportData: res
+                    reportData: res.ReportSalesLastYear
                 });
                 let chart = this.reportChart.getChart();
                 chart.series[0].setData(this.state.reportData, true);
@@ -44,7 +44,7 @@ class HomeActiveSales extends React.Component {
                 .then(res => res.json())
                 .then(res => {
                     this.setState({
-                        reportData: res
+                        reportData: res.ReportSalesLastYear
                     });
                     let chart = this.reportChart.getChart();
                     chart.series[0].setData(this.state.reportData, true);
@@ -61,7 +61,7 @@ class HomeActiveSales extends React.Component {
                 .then(res => res.json())
                 .then(res => {
                     this.setState({
-                        reportData: res
+                        reportData: res.ReportSalesLastMonth
                     });
                     let chart = this.reportChart.getChart();
                     chart.series[0].setData(this.state.reportData, true);
@@ -78,7 +78,7 @@ class HomeActiveSales extends React.Component {
                 .then(res => res.json())
                 .then(res => {
                     this.setState({
-                        reportData: res
+                        reportData: res.ReportSalesLastWeek
                     });
                     let chart = this.reportChart.getChart();
                     chart.series[0].setData(this.state.reportData, true);

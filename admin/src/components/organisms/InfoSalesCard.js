@@ -13,7 +13,7 @@ class InfoSalesCard extends React.Component {
 
         this.state = {
             salesData: [],
-            value: 'Last year',
+            value: 'Last year'
         }
     }
 
