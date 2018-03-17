@@ -1,8 +1,8 @@
 const rootReducer = (state = {}, action) => {
 
     switch (action.type) {
-        case 'SELECT_STATUS':
-            return {status: action.payload.status}
+        case 'MENU_STATUS':
+            return {status: action.payload.status};
 
         default:
             return state;

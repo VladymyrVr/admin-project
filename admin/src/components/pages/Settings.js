@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './Settings.css';
 
@@ -7,11 +8,17 @@ import './Settings.css';
 class Settings extends React.Component {
     render() {
         return (
-            <div className="SettingsPage">
+            <section className={this.props.statusMenu === false || this.props.statusMenu === undefined ? "SettingsPage" : "SettingsPage SettingsPageActive"}>
                 Settings
-            </div>
+            </section>
         )
     }
 }
 
-export default Settings;
+const mapState = (state, props) => {
+    return {
+        statusMenu: state.status
+    }
+};
+
+export default connect(mapState)(Settings);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './HomePage.css';
 
@@ -15,7 +16,7 @@ class HomePage extends React.Component {
     render() {
         const userName = JSON.parse(localStorage.getItem("user"));
         return (
-            <section className="HomePage">
+            <section className={this.props.statusMenu === false || this.props.statusMenu === undefined ? "HomePage" : "HomePage HomePageActive"}>
                 <h3>Hello {userName}</h3>
                 <div className="FlexWrapper">
                     <InfoSalesCard data={forSalesData}/>
@@ -31,4 +32,10 @@ class HomePage extends React.Component {
     }
 }
 
-export default HomePage;
+const mapState = (state, props) => {
+    return {
+        statusMenu: state.status
+    }
+};
+
+export default connect(mapState)(HomePage);

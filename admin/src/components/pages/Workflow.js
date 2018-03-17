@@ -1,12 +1,12 @@
 import React from 'react';
 import Board from 'react-trello';
+import { connect } from  'react-redux';
 
 
 import './Workflow.css';
 
 
 //components
-import ToDoListItem from '../organisms/ToDoListItem';
 
 const ToDoData = [
     {
@@ -131,11 +131,12 @@ class Workflow extends React.Component {
 
     render () {
         return (
-            <section className="WorkflowPage">
+            <section className={this.props.statusMenu === false || this.props.statusMenu === undefined ? "WorkflowPage" : "WorkflowPage WorkflowPageActive"}>
             <Board data={data} draggable  style={
                 {
                     background: 'transparent',
                     display: 'flex',
+                    height: 'max-content',
                     width: '100%',
                     justifyContent: 'space-around'
                 }
@@ -146,6 +147,13 @@ class Workflow extends React.Component {
         )
     }
 }
+
+const mapState = (state, props) => {
+    return {
+        statusMenu: state.status
+    }
+};
+
 
 /*
                <div className="ToDoCategory">
@@ -186,4 +194,4 @@ class Workflow extends React.Component {
                </div>
                */
 
-export default Workflow;
+export default connect(mapState)(Workflow);

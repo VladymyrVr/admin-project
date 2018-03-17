@@ -1,12 +1,13 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom'
+import {withRouter, NavLink} from 'react-router-dom'
 import Popover, {PopoverAnimationVertical} from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import Drawer from 'material-ui/Drawer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import {NavLink} from 'react-router-dom';
+import store from '../../redux/store';
+
 import './TopBar.css';
 import './LeftBar.css';
 
@@ -23,6 +24,13 @@ class TopBar extends React.Component {
 
     handleToggle = () => {
         this.setState({drawer: !this.state.drawer});
+
+        store.dispatch({
+            type: 'MENU_STATUS',
+            payload: {
+                status: !this.state.drawer
+            }
+        })
     };
 
     handleOpen = (event) => {
@@ -56,7 +64,7 @@ class TopBar extends React.Component {
                         <button className="SearchButton"></button>
                     </div>
                     <Drawer open={this.state.drawer} width={320} containerClassName="Drawer">
-                        <MenuItem innerDivStyle={{padding: 0}} style={{lineHeight: 0}} animated={false}>
+                        <MenuItem innerDivStyle={{padding: 0}} style={{lineHeight: 0}}>
                             <div className="Logo">
                                 <img src="img/logo.png" alt="Logo"/>
                             </div>

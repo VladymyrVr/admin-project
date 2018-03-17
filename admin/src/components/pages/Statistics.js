@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactHighcharts from 'react-highcharts';
+import { connect } from 'react-redux';
 
 import StatisticChartConfig from '../../config/StatisticChartConfig';
 
@@ -130,7 +131,7 @@ class Statistics extends React.Component {
 
     render() {
         return (
-            <section className="StatisticsPage">
+            <section className={this.props.statusMenu === false || this.props.statusMenu === undefined ? "StatisticsPage" : "StatisticsPage StatisticsPageActive"}>
                 <div className="StatisticControlPanel">
                     <p>Stats</p>
                     <div className="SelectPanels">
@@ -174,4 +175,10 @@ class Statistics extends React.Component {
     }
 }
 
-export default Statistics;
+const mapState = (state, props) => {
+    return {
+        statusMenu: state.status
+    }
+};
+
+export default connect(mapState)(Statistics);

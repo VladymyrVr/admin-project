@@ -4,6 +4,7 @@ import Popover, {PopoverAnimationVertical} from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { connect } from 'react-redux';
 
 import 'react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 import './Users.css';
@@ -650,7 +651,7 @@ class Users extends React.Component {
 
         return (
 
-            <section className="Users">
+            <section className={this.props.statusMenu === false || this.props.statusMenu === undefined ? "Users" : "Users UsersActive"}>
                 <div className="UserStatus">
                     <p className="UsersGeneral">Users <span>({this.state.usersList.length})</span></p>
                     <select onChange={this.onHandleChange}>
@@ -708,5 +709,10 @@ class Users extends React.Component {
     }
 }
 
+const mapState = (state, props) => {
+    return {
+        statusMenu: state.status
+    }
+};
 
-export default Users;
+export default connect(mapState)(Users);

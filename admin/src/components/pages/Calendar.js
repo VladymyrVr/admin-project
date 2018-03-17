@@ -8,6 +8,7 @@ import BigCalendar from 'react-big-calendar';
 import {DragDropContext} from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import withDragAndDrop from 'react-big-calendar/lib/addons/dragAndDrop';
+import { connect } from 'react-redux';
 
 
 const DragAndDropCalendar = withDragAndDrop(BigCalendar);
@@ -265,7 +266,7 @@ class Calendar extends React.Component {
 
     render() {
         return (
-            <div className="CalendarPage">
+            <section className={this.props.statusMenu === false || this.props.statusMenu === undefined ? "CalendarPage" : 'CalendarPage CalendarPageActive'}>
                 <DragAndDropCalendar
                     selectable
                     events={this.state.events}
@@ -287,9 +288,15 @@ class Calendar extends React.Component {
                         )
                     }
                 />
-            </div>
+            </section>
         )
     }
 }
 
-export default DragDropContext(HTML5Backend)(Calendar)
+const mapState = (state, props) => {
+    return {
+        statusMenu: state.status
+    }
+};
+
+export default connect(mapState)(DragDropContext(HTML5Backend)(Calendar))
