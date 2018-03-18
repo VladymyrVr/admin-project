@@ -1,0 +1,13 @@
+.CardHeader {
+    margin-bottom: 10px;
+}
+
+.CardHeader p {
+    color: #0e1a35;
+    font: 700 32px 'Roboto', sans-serif;
+}
+
+.CardHeader p span {
+    color: #8492af;
+    margin-left: 5px;
+}
