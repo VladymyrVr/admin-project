@@ -4,7 +4,7 @@ import './TaskName.css';
 
 class TaskName extends React.Component {
     render () {
-        let TitleSymbol = this.props.data.title.charAt(0).toUpperCase()
+        let TitleSymbol = this.props.data.title.charAt(0).toUpperCase();
 
 
         return (
